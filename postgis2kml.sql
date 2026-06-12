@@ -5,7 +5,7 @@ WITH params AS (
 ),
 src AS (
     SELECT
-        row_number() OVER (ORDER BY id) AS rn,  -- podmień id na stabilną kolumnę sortującą
+        row_number() OVER (ORDER BY id) AS rn,  -- replace id with stable sorting column
         CASE
             WHEN ST_SRID(column_name_with_geometry) = 4326
                 THEN column_name_with_geometry
